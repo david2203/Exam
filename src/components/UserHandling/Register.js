@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Register() {
 
-
+    const navigate = useNavigate()
 
     const initialValues = {
         username:" ",
@@ -29,7 +29,8 @@ function Register() {
                  email: registerValues.email,
                  password: registerValues.password
              }).then( (e)=> { if(e.data.user)
-                console.log("hej")
+                navigate("/Login");
+                window.location.reload();
 
              }).catch((err)=> {console.log(err)})
  
