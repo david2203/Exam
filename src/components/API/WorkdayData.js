@@ -39,7 +39,7 @@ function WorkdayData() {
 
     useEffect(()=> {
         if (!loading) {
-        
+            console.log(dataArray)
             const jobEntries = dataArray.data.Report_Entry
            
            for(let i = 0; i < jobEntries.length; i++) {

@@ -1,0 +1,23 @@
+
+.filterFormContainer {
+    margin:50px;
+    height:300px;
+    padding:30px;
+    background-color: rgb(247, 213, 121);
+    
+    .filterForm {
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        select {
+           
+            margin:10px;
+            width:200px;
+        }
+        button {
+            width:100px;
+            border-radius:25px;
+        }
+    }
+}

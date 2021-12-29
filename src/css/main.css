@@ -105,7 +105,7 @@
           flex-direction: column;
 }
 
-.hero-v1 {
+.hero-landing {
   height: 500px;
   background-color: #bdeebd;
   display: -webkit-box;
@@ -124,20 +124,102 @@
   padding: 10%;
 }
 
-.hero-v1 .hero-h2 {
+.hero-landing .hero-h2 {
   max-width: 40%;
   z-index: 3;
   padding: 10px;
 }
 
-.hero-v1 .hero-p {
+.hero-landing .hero-p {
   max-width: 40%;
   z-index: 3;
 }
 
-.hero-v1 .hero-img {
+.hero-landing .hero-img {
   position: absolute;
   height: 50%;
   right: 0;
+}
+
+.hero-jobs {
+  height: 500px;
+  background-color: #bdeebd;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10%;
+}
+
+.hero-jobs .hero-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-jobs .hero-h2 {
+  max-width: 60%;
+  z-index: 3;
+  padding: 10px;
+}
+
+.hero-jobs .hero-p {
+  max-width: 60%;
+  z-index: 3;
+}
+
+.hero-jobs .hero-img {
+  position: absolute;
+  height: 50%;
+  right: 0;
+}
+
+.filterFormContainer {
+  margin: 50px;
+  height: 300px;
+  padding: 30px;
+  background-color: #f7d579;
+}
+
+.filterFormContainer .filterForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filterFormContainer .filterForm select {
+  margin: 10px;
+  width: 200px;
+}
+
+.filterFormContainer .filterForm button {
+  width: 100px;
+  border-radius: 25px;
 }
 /*# sourceMappingURL=main.css.map */
