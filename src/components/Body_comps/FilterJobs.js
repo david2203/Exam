@@ -13,6 +13,7 @@ function FilterJobs() {
         workLocation: "",
         brandName: "",
         weeklyHrs: "",
+        openings: ""
     }
     const [filterValues, setFilterValues] = useState(initialValues)
     
@@ -20,7 +21,12 @@ function FilterJobs() {
         if(e.target.value === "Show all"){
             setFilterValues({...filterValues, [e.target.name]: ""})
         }else {
-            setFilterValues({...filterValues,[e.target.name]:e.target.value})
+            if(e.target.value === "At least 1"){
+                setFilterValues({...filterValues,[e.target.name]:"0"})
+            }else {
+                setFilterValues({...filterValues,[e.target.name]:e.target.value})
+            }
+            
         }
         
         
@@ -45,6 +51,11 @@ function FilterJobs() {
                         $endsWith: filterValues.weeklyHrs
                     } 
                 },
+                {
+                    Number_of_Openings_Available: {
+                        $ne: filterValues.openings
+                    } 
+                },
                 
             ]
                
@@ -55,7 +66,7 @@ function FilterJobs() {
             page: 1,
             pageSize: 10,
         },
-        fields: ["Brand_Name", "locationCountry", "Scheduled_Weekly_Hours"]
+        fields: ["Brand_Name", "locationCountry", "Scheduled_Weekly_Hours","Number_of_Openings_Available","Job_Description","startDate","Job_Description_Summary","Job_Profiles","Work_Shift"]
     }, {
         encodeValuesOnly: true,
     });
@@ -149,6 +160,11 @@ function FilterJobs() {
                     <option>37.5</option>
                     <option>40</option>
                 </select>
+                <label>Chose prefered number of openings: </label>
+                <select onChange={handleFilter} name="openings" id="" className="">
+                    <option>Show all</option>
+                    <option>At least 1</option>
+                </select>
                 
                 
 
@@ -164,9 +180,13 @@ function FilterJobs() {
             
                 :
             jobArray.map((job, key)=> {
-                
+                if(job.attributes.Brand_Name.startsWith("[DONOT USE]") ){
+                    return (
+                        <div> </div>
+                    )
+                }
                 return (
-                <Job key={key} brandName={job.attributes.Brand_Name} locationCountry={job.attributes.locationCountry} weeklyHrs={job.attributes.Scheduled_Weekly_Hours}/>
+                <Job key={key} brandName={job.attributes.Brand_Name} locationCountry={job.attributes.locationCountry} weeklyHrs={job.attributes.Scheduled_Weekly_Hours} openings={job.attributes.Number_of_Openings_Available} jobDesc={job.attributes.Job_Description} jobDescSum={job.attributes.Job_Description_Summary} workShift={job.attributes.Work_Shift} startDate={job.attributes.startDate} jobProfiles={job.attributes.Job_Profiles}/>
                 )
             })
             }

@@ -54,15 +54,15 @@ function WorkdayData() {
                const External_Posting_URL = jobEntries[i].Job_Posting_Details_group[0].External_Posting_URL
                const Job_Profiles =  jobEntries[i].Job_Posting_Details_group[0].Job_Profiles
                const Work_Shift = jobEntries[i].Job_Posting_Details_group[0].Work_Shift
-               const Job_Family = jobEntries[i].Job_Posting_Details_group[0].job_Family
-               const JobFamilyGroup = jobEntries[i].Job_Posting_Details_group[0].jobFamilyGroup
+               const jobFamily = jobEntries[i].Job_Posting_Details_group[0].jobFamily
+               const jobFamilyGroup = jobEntries[i].Job_Posting_Details_group[0].jobFamilyGroup
                const JobRequisitionId = jobEntries[i].Job_Posting_Details_group[0].jobRequisitionId
                const StartDate = jobEntries[i].Job_Posting_Details_group[0].startDate
                const TimeType = jobEntries[i].Job_Posting_Details_group[0].timeType
                const Title = jobEntries[i].Job_Posting_Details_group[0].title
                const WorkerSubType = jobEntries[i].Job_Posting_Details_group[0].workerSubType
-               const Job_Requsition = jobEntries[i].Job_Requisition
-               const Number_Of_Openings_Available = jobEntries[i].Number_Of_Openings_Available
+               const Job_Requisition = jobEntries[i].Job_Requisition
+               const Number_of_Openings_Available = jobEntries[i].Number_of_Openings_Available
                const RA_ESI_Brand = jobEntries[i].RA_ESI_Brand
                const Scheduled_Weekly_Hours = jobEntries[i].Scheduled_Weekly_Hours
                const LocationCountry = jobEntries[i].locationCountry
@@ -79,15 +79,15 @@ function WorkdayData() {
                             External_Posting_URL: External_Posting_URL,
                             Job_Profiles: Job_Profiles,
                             Work_Shift: Work_Shift,
-                            Job_Family: Job_Family,
-                            JobFamilyGroup: JobFamilyGroup,
+                            jobFamily: jobFamily,
+                            jobFamilyGroup: jobFamilyGroup,
                             JobRequisitionId: JobRequisitionId,
                             StartDate: StartDate,
                             TimeType: TimeType,
                             Title: Title,
                             WorkerSubType: WorkerSubType,
-                            Job_Requsition: Job_Requsition,
-                            Number_Of_Openings_Available: Number_Of_Openings_Available,
+                            Job_Requisition: Job_Requisition,
+                            Number_of_Openings_Available: Number_of_Openings_Available,
                             RA_ESI_Brand: RA_ESI_Brand,
                             Scheduled_Weekly_Hours: Scheduled_Weekly_Hours,
                             LocationCountry: LocationCountry,
@@ -110,15 +110,15 @@ function WorkdayData() {
                             External_Posting_URL: External_Posting_URL,
                             Job_Profiles: Job_Profiles,
                             Work_Shift: Work_Shift,
-                            job_Family: Job_Family,
-                            jobFamilyGroup: JobFamilyGroup,
+                            jobFamily: jobFamily,
+                            jobFamilyGroup: jobFamilyGroup,
                             jobRequisitionId: JobRequisitionId,
                             startDate: StartDate,
                             timeType: TimeType,
                             title: Title,
                             workerSubType: WorkerSubType,
-                            Job_Requsition: Job_Requsition,
-                            Number_Of_Openings_Available: Number_Of_Openings_Available,
+                            Job_Requisition: Job_Requisition,
+                            Number_of_Openings_Available: Number_of_Openings_Available,
                             RA_ESI_Brand: RA_ESI_Brand,
                             Scheduled_Weekly_Hours: Scheduled_Weekly_Hours,
                             locationCountry: LocationCountry,
