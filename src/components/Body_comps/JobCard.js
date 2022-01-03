@@ -1,17 +1,37 @@
 import React from 'react'
+import {Navigate, useNavigate} from "react-router-dom";
 
-function JobCard({brandName, weeklyHrs, locationCountry, openings, jobDesc, jobDescSum, jobProfiles, workShift, startDate}) {
+function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDesc, jobDescSum, jobProfiles, workShift, startDate}) {
     const brandUpper = brandName.charAt(0).toUpperCase() + brandName.slice(1)
-    const jobDescShort = jobDesc.substring(0,500)
+    const jobDescShort = jobDesc.substring(0,300)
+    const navigate = useNavigate()
+    function showWholeJobCard() {
+        navigate(`/SpecificJob?id=${jobId}`)
+  
+    }
     return (
-        <div className='job-card-container-v1'>
-            <p><strong>{brandUpper}</strong></p>
+        <div className='job-card-container-v1' onClick={showWholeJobCard}>
+
+            <p>  <strong> Job Profile: </strong> {jobProfiles}</p>
+
+            <p><strong> Company: </strong> {brandUpper}</p>
+
+            <p><strong> Location: </strong> {locationCountry}</p>
+
+            <p><strong>Currently available openings: </strong> {openings}</p>
             
-            <div dangerouslySetInnerHTML={{__html: jobDescShort + "<span className=blueText style= color:blue>...Click to read more </span>"}} />
-           
-            {weeklyHrs}
-            {locationCountry}
-            {openings}
+            <p><strong> Job description: </strong> </p>
+        {jobDescSum ?
+         <div dangerouslySetInnerHTML={{__html: jobDescSum + "<span style= color:blue>...Click to read more </span>"}} />
+         :
+        <div dangerouslySetInnerHTML={{__html: jobDescShort + "<span style= color:blue>...Click to read more </span>"}} />
+            
+        }
+        <br/>
+            
+            
+            
+            
 
         </div>
     )

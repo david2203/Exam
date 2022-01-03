@@ -60,8 +60,9 @@
   height: 100vw;
 }
 
-.blueText {
+.blue {
   color: blue;
+  background-color: blue;
 }
 
 .footer-v1 {
@@ -242,5 +243,49 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 100px;
+  padding: 10px;
+  border: 1px solid grey;
+}
+
+.specificJob-v1 {
+  margin: 100px;
+}
+
+.specificJob-v1 .InfoContainer-specificJob-v1 {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+  padding: 50px;
+  border: 1px solid grey;
+}
+
+.paginationContainer {
+  margin: 20px;
+}
+
+.paginationContainer button {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  border: none;
+  background: none;
+}
+
+.paginationContainer button img {
+  height: 20px;
+  width: 20px;
 }
 /*# sourceMappingURL=main.css.map */

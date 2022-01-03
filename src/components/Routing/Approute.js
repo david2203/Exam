@@ -12,6 +12,7 @@ import Register from "../UserHandling/Register";
 import Footer from "../Body_comps/Footer";
 import Logout from "../UserHandling/Logout";
 import Jobs from "../Pages/Jobs";
+import SpecificJob from "../Body_comps/SpecificJob";
 
 function Approute() {
     return (
@@ -27,6 +28,8 @@ function Approute() {
                 <Route path="/Logout" element={<Logout/>} />
                 <Route path="/Landingpage" element={<Landingpage/>} />
                 <Route path="/Jobs" element={<Jobs/>} />
+                <Route path="/SpecificJob" element={<SpecificJob/>} />
+
 
 
             </Routes>

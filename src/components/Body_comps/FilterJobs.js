@@ -3,10 +3,25 @@ import React, {useState, useEffect} from 'react';
 import axios from "axios";
 import server from "../Config_Env/Config"
 import Job from "./JobCard"
+import next from "../Icons/next.png"
+import previous from "../Icons/left-arrow.png"
+
 
 function FilterJobs() {
+   
+    const  [blue, setBlue] = useState("")
 
-    const [jobArray, setJobArray] = useState([]) 
+
+
+    
+    const [jobArray, setJobArray] = useState([])
+    
+    const [first, setFirst] = useState(1)
+    const [second, setSecond] = useState(2)
+    const [third, setThird] = useState(3)
+
+    const [start, setStart] = useState("1")
+    const [limit, setLimit] = useState(10)
     const [firstRender, setFirstRender] = useState(true)
     const [loading, setLoading] = useState(true)
     const initialValues = {
@@ -31,6 +46,7 @@ function FilterJobs() {
         
         
     }
+    console.log(start)
     var qs = require('qs');
 
     const query =  qs.stringify({
@@ -63,10 +79,10 @@ function FilterJobs() {
             
         },
         pagination: {
-            page: 1,
-            pageSize: 10,
+            page: start,
+            pageSize: limit,
         },
-        fields: ["Brand_Name", "locationCountry", "Scheduled_Weekly_Hours","Number_of_Openings_Available","Job_Description","startDate","Job_Description_Summary","Job_Profiles","Work_Shift"]
+        fields: ["id", "Brand_Name", "locationCountry", "Scheduled_Weekly_Hours","Number_of_Openings_Available","Job_Description","startDate","Job_Description_Summary","Job_Profiles","Work_Shift","External_Apply_URL"]
     }, {
         encodeValuesOnly: true,
     });
@@ -84,15 +100,25 @@ function FilterJobs() {
 
     useEffect(()=> {
         if(!loading) {
-            console.log(jobArray)
             setLoading(true)
         }
     })
 
     
 
-    
+    function takeMeToPaginationFirst() {
+        setStart(first)
+    }
+    function takeMeToPaginationSecond() {
+        setStart(second)
+    }
+    function takeMeToPaginationThird() {
+        setStart(third)
+    }
 
+    function makeBlue() {
+        setBlue("blue")
+    }
     return (
         <>
         <section className="filterFormContainer">
@@ -186,10 +212,20 @@ function FilterJobs() {
                     )
                 }
                 return (
-                <Job key={key} brandName={job.attributes.Brand_Name} locationCountry={job.attributes.locationCountry} weeklyHrs={job.attributes.Scheduled_Weekly_Hours} openings={job.attributes.Number_of_Openings_Available} jobDesc={job.attributes.Job_Description} jobDescSum={job.attributes.Job_Description_Summary} workShift={job.attributes.Work_Shift} startDate={job.attributes.startDate} jobProfiles={job.attributes.Job_Profiles}/>
+                <Job key={key} jobId={job.id} brandName={job.attributes.Brand_Name} locationCountry={job.attributes.locationCountry} weeklyHrs={job.attributes.Scheduled_Weekly_Hours} openings={job.attributes.Number_of_Openings_Available} jobDesc={job.attributes.Job_Description} jobDescSum={job.attributes.Job_Description_Summary} workShift={job.attributes.Work_Shift} startDate={job.attributes.startDate} jobProfiles={job.attributes.Job_Profiles}/>
                 )
             })
             }
+
+            <div className="paginationContainer">
+
+                <button> <img className="prevBtn" src={previous} />   </button>
+                <button onClick={takeMeToPaginationFirst}> {first}</button>
+                <button onClick={takeMeToPaginationSecond}> {second} </button>
+                <button onClick={takeMeToPaginationThird}> {third} </button>
+                <button><img className="nextBtn" src={next} />  </button>
+                <button className={blue} onClick={makeBlue}> Blue after click</button>
+            </div>
             
         </section>
         </>
