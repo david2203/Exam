@@ -1,10 +1,10 @@
-@for $i from 1 through 10 {
-    .h1-#{$i}-vw {
-        height:$i*10vw;
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width:100%/12 * $i
     }
 }
 
-.blue {
-    color:blue;
-    background-color:blue;
+.bg-shade {
+     background-color:rgb(241, 240, 240);
 }
+

@@ -1,68 +1,75 @@
 .Nav-v1 {
   height: 75px;
-  background-color: lightcoral;
+  background-color: #d5a7a7;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.Nav-v1 .nav-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 150px;
+.Nav-v1 a {
+  text-decoration: none;
 }
 
-.h1-1-vw {
-  height: 10vw;
+.Nav-v1 .active {
+  text-decoration: underline;
 }
 
-.h1-2-vw {
-  height: 20vw;
+.col-1 {
+  width: 8.33333%;
 }
 
-.h1-3-vw {
-  height: 30vw;
+.col-2 {
+  width: 16.66667%;
 }
 
-.h1-4-vw {
-  height: 40vw;
+.col-3 {
+  width: 25%;
 }
 
-.h1-5-vw {
-  height: 50vw;
+.col-4 {
+  width: 33.33333%;
 }
 
-.h1-6-vw {
-  height: 60vw;
+.col-5 {
+  width: 41.66667%;
 }
 
-.h1-7-vw {
-  height: 70vw;
+.col-6 {
+  width: 50%;
 }
 
-.h1-8-vw {
-  height: 80vw;
+.col-7 {
+  width: 58.33333%;
 }
 
-.h1-9-vw {
-  height: 90vw;
+.col-8 {
+  width: 66.66667%;
 }
 
-.h1-10-vw {
-  height: 100vw;
+.col-9 {
+  width: 75%;
 }
 
-.blue {
-  color: blue;
-  background-color: blue;
+.col-10 {
+  width: 83.33333%;
+}
+
+.col-11 {
+  width: 91.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.bg-shade {
+  background-color: #f1f0f0;
 }
 
 .footer-v1 {
@@ -287,5 +294,10 @@
 .paginationContainer button img {
   height: 20px;
   width: 20px;
+}
+
+.pwicon {
+  margin-left: -30px;
+  margin-bottom: 35px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -13,6 +13,7 @@ import Footer from "../Body_comps/Footer";
 import Logout from "../UserHandling/Logout";
 import Jobs from "../Pages/Jobs";
 import SpecificJob from "../Body_comps/SpecificJob";
+import ForgottenPW from "../UserHandling/ForgottenPW";
 
 function Approute() {
     return (
@@ -29,6 +30,8 @@ function Approute() {
                 <Route path="/Landingpage" element={<Landingpage/>} />
                 <Route path="/Jobs" element={<Jobs/>} />
                 <Route path="/SpecificJob" element={<SpecificJob/>} />
+                <Route path="/ForgottenPW" element={<ForgottenPW/>} />
+
 
 
 
