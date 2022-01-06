@@ -4,7 +4,7 @@ import axios from "axios";
 import server from "../Config_Env/Config"
 import Job from "./JobCard"
 import Pagination from './Pagination';
-
+import arrow from "../Icons/arrow.png";
 import next from "../Icons/next.png"
 import previous from "../Icons/left-arrow.png"
 
@@ -238,7 +238,7 @@ function FilterJobs() {
                         />
                     </>}
 
-                    <button onClick={topFunction} id="toTop" className={display} title="Go to top">Arrow up</button>
+                    <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} class="fas fa-arrow-up"/></button>
 
 
             </section>

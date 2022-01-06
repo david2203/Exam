@@ -77,7 +77,7 @@ function ForgottenPW() {
 
                   <label> Suddenly remember your password ? </label>
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <Link to="/Register" className="" >Back to Login!</Link>
+                    <Link to="/Login" className="" >Back to Login!</Link>
                   </div>                  
                 </div>
 
