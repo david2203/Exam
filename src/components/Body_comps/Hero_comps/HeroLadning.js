@@ -1,5 +1,6 @@
 import React from 'react'
 import hero from "../bodyImages/hero.png"
+import {Link} from "react-router-dom"
 
 function HeroLadning() {
     const token = localStorage.getItem("jwt")
@@ -10,7 +11,10 @@ function HeroLadning() {
             : 
             <h2 className="hero-h2"> Welcome to Work Made Simple</h2>}
             
-           {token ? <p className="hero-p"> Follow the link below to se avaliable jobs & manage your applications</p>
+           {token ? <> <p className="hero-p"> Follow this Link to se avaliable jobs & manage your applications <Link to="/jobs">Click me!</Link></p>
+
+            
+           </>
            :
            <p className="hero-p"> Login to se avaliable jobs & manage your applications</p>
            } 

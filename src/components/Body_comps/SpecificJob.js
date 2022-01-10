@@ -3,12 +3,14 @@ import axios from "axios";
 import server from "../Config_Env/Config"
 import Job from "./JobCard"
 import Hero from './Hero_comps/HeroSpecificJob';
+import {useNavigate} from "react-router-dom";
+import arrow from "../Icons/arrow.png";
 
 function SpecificJob() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
     const jobId = urlParams.get("id")
-    
+    const navigate = useNavigate()
     const useGetJob = () => {
         const [jobInfo, setJobInfo] = useState([])
         const [loading, setLoading] = useState(true)
@@ -35,7 +37,24 @@ function SpecificJob() {
 
     const {loading, jobInfo} = useGetJob()
 
-    
+    function sendToApply() {
+        navigate(`/ApplyToSpecific?jobId=${jobId}`)
+    }
+
+    const [display, setDisplay] = useState("block")
+    window.onscroll = function() {takeMeToTop()};
+    function takeMeToTop() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        setDisplay("block")
+        } else {
+        setDisplay("none")
+        }
+    }
+
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
     return (
         <div className="specificJob-v1">
            <Hero/>
@@ -52,12 +71,14 @@ function SpecificJob() {
 
     
         </div>
-        <div> <strong>Does this job fit you? Send and application right <a href=""> here </a> or go to <a href={jobInfo.data.attributes.External_Apply_URL} >Workdays official application site</a> </strong> </div>
+        <div> <strong>Does this job fit you? Send and application right <a href="" onClick={sendToApply} > here </a> or go to <a href={jobInfo.data.attributes.External_Apply_URL} >Workdays official application site</a> </strong> </div>
         </> :
         <> loading...</>
         }
             
+            <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} class="fas fa-arrow-up"/></button>
 
+            
         </div>
     )
 }

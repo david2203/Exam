@@ -14,6 +14,7 @@ import Logout from "../UserHandling/Logout";
 import Jobs from "../Pages/Jobs";
 import SpecificJob from "../Body_comps/SpecificJob";
 import ForgottenPW from "../UserHandling/ForgottenPW";
+import ApplyToSpecific from "../Body_comps/ApplyToSpecific";
 
 function Approute() {
     return (
@@ -31,6 +32,8 @@ function Approute() {
                 <Route path="/Jobs" element={<Jobs/>} />
                 <Route path="/SpecificJob" element={<SpecificJob/>} />
                 <Route path="/ForgottenPW" element={<ForgottenPW/>} />
+                <Route path="/ApplyToSpecific" element={<ApplyToSpecific/>} />
+
 
 
 

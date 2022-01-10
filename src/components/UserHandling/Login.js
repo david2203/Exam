@@ -30,6 +30,8 @@ function Login() {
                 localStorage.setItem("jwt", e.data.jwt)
                 localStorage.setItem("userId", e.data.user.id)
                 localStorage.setItem("username", e.data.user.username)
+                localStorage.setItem("userEmail", e.data.user.email)
+
                 navigate("/Landingpage");
                 window.location.reload();
 
