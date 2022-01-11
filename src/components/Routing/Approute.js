@@ -12,9 +12,11 @@ import Register from "../UserHandling/Register";
 import Footer from "../Body_comps/Footer";
 import Logout from "../UserHandling/Logout";
 import Jobs from "../Pages/Jobs";
-import SpecificJob from "../Body_comps/SpecificJob";
+import SpecificJob from "../Pages/SpecificJob";
 import ForgottenPW from "../UserHandling/ForgottenPW";
-import ApplyToSpecific from "../Body_comps/ApplyToSpecific";
+import ApplyToSpecific from "../Pages/ApplyToSpecific";
+import MyApplications from "../Pages/MyApplications";
+import SavedJobs from "../Pages/SavedJobs";
 
 function Approute() {
     return (
@@ -28,11 +30,15 @@ function Approute() {
                 <Route path="/Register" element={<Register/>} />
                 <Route path="/Login" element={<Login/>} />
                 <Route path="/Logout" element={<Logout/>} />
-                <Route path="/Landingpage" element={<Landingpage/>} />
+                <Route path="/" element={<Landingpage/>} />
                 <Route path="/Jobs" element={<Jobs/>} />
                 <Route path="/SpecificJob" element={<SpecificJob/>} />
                 <Route path="/ForgottenPW" element={<ForgottenPW/>} />
                 <Route path="/ApplyToSpecific" element={<ApplyToSpecific/>} />
+                <Route path="/MyApplications" element={<MyApplications/>} />
+                <Route path="/SavedJobs" element={<SavedJobs/>} />
+
+
 
 
 

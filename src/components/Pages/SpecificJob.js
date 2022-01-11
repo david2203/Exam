@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from "axios";
 import server from "../Config_Env/Config"
-import Job from "./JobCard"
-import Hero from './Hero_comps/HeroSpecificJob';
+import Hero from '../Body_comps/Hero_comps/HeroSpecificJob';
 import {useNavigate} from "react-router-dom";
 import arrow from "../Icons/arrow.png";
 

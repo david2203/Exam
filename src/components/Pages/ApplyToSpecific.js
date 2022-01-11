@@ -11,7 +11,7 @@ function ApplyToSpecific() {
     const userId = localStorage.getItem("userId")
     const navigate = useNavigate()
     const email = localStorage.getItem("userEmail")
-
+    const [error, setError] = useState("")
     const useGetJob = () => {
         const [jobInfo, setJobInfo] = useState([])
         const [loading, setLoading] = useState(true)
@@ -66,8 +66,8 @@ function ApplyToSpecific() {
         const data = new FormData();
         data.append("files", applyValues.file)
 
-        
-        axios.post(`${server}api/upload`, data).then((res) => {
+        if(applyValues.file !== "" ) {
+          axios.post(`${server}api/upload`, data).then((res) => {
             const imageId = res.data[0].id
             
             axios.post(`${server}api/applications`, {
@@ -86,11 +86,20 @@ function ApplyToSpecific() {
                 "data" : {
                     "CV" : imageId
                 }
+            }).then((response)=> {
+              if(response.data.data.attributes.applyEmail) {
+                navigate("/myApplications?event=success")
+              }
             })
     
     
         }).catch((err)=> {console.log("something went wrong!") })
         })
+        }
+        else {
+          setError("Please add a CV to your application!")
+        }
+        
     
     }
 
@@ -108,7 +117,7 @@ function ApplyToSpecific() {
             <div className="row justify-content-center">
               <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Application info</p>
+                <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Application information </p>
 
                 <form className="mx-1 mx-md-4" onSubmit={handleOnSubmit}>
 
@@ -135,7 +144,7 @@ function ApplyToSpecific() {
                     </div>
                   </div>
 
-             
+                  <p>{error}</p>
                   <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <button type="submit" className="btn btn-primary btn-lg">Apply</button>
                   </div>
@@ -152,8 +161,13 @@ function ApplyToSpecific() {
                 
                 
                 
-              <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
+              <div className="col-md-10 col-lg-6 col-xl-7 d-flex flex-column justify-content-center order-1 order-lg-2">
+                <h2>You are about to apply to the following Job: </h2> {!loading? <> 
+                  <p> <strong>Title:</strong> {jobInfo.data.attributes.title}</p>
+                <p> <strong>Location:</strong> {jobInfo.data.attributes.locationCountry}</p>
+                <p> <strong>Brand:</strong> {jobInfo.data.attributes.Brand_Name}</p>
+                <p> <strong>Work shift:</strong> {jobInfo.data.attributes.Work_Shift}</p>
+                </> : <></> }
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample image"/>
 
               </div>

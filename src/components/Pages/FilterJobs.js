@@ -1,12 +1,11 @@
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import server from "../Config_Env/Config"
-import Job from "./JobCard"
-import Pagination from './Pagination';
+import Job from "../Body_comps/JobCard"
+import Pagination from '../Body_comps/Pagination';
 import arrow from "../Icons/arrow.png";
-import next from "../Icons/next.png"
-import previous from "../Icons/left-arrow.png"
+
 
 
 function FilterJobs() {

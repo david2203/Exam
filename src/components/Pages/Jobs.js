@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterJobs from '../Body_comps/FilterJobs';
+import FilterJobs from './FilterJobs';
 import HeroJobs from '../Body_comps/Hero_comps/HeroJobs';
 
 

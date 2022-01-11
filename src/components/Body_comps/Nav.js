@@ -18,7 +18,7 @@ function Nav() {
         {token ? 
             <div className="Nav-v1">
             <div className='nav-left col-5'> 
-            <Link to="/Landingpage"  onClick={setActive} id="LinkToLanding" className={active === "activeLanding" ? "active": ""}> Home </Link>
+            <Link to="/"  onClick={setActive} id="LinkToLanding" className={active === "activeLanding" ? "active": ""}> Home </Link>
             </div>
 
             <h3 className="logo col-2"> Work Made Simple</h3>
@@ -32,7 +32,7 @@ function Nav() {
 
             <div className="Nav-v1">
             <div className='nav-left col-5'> 
-            <Link  to="/Landingpage" onClick={setActive} id="LinkToLanding" className={active === "activeLanding"  ? "active": ""} > Home </Link>
+            <Link  to="/" onClick={setActive} id="LinkToLanding" className={active === "activeLanding"  ? "active": ""} > Home </Link>
             </div>
             <h3 className="logo col-2"> W | M | S </h3>
             <div className="nav-right col-5">

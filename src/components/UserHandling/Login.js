@@ -32,7 +32,7 @@ function Login() {
                 localStorage.setItem("username", e.data.user.username)
                 localStorage.setItem("userEmail", e.data.user.email)
 
-                navigate("/Landingpage");
+                navigate("/");
                 window.location.reload();
 
 
