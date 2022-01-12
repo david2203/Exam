@@ -17,8 +17,24 @@
     // }
     a {
         text-decoration: none;
+        margin-left:10px;
     }
     .active {
         text-decoration: underline;
+    }
+
+    @media screen and (min-width:600px) {
+        .logo {
+            width:20%;
+        
+        }
+        .nav-right {
+         width:40%;
+        }
+        .nav-left {
+            width:40%;
+        }
+   
+        
     }
 }

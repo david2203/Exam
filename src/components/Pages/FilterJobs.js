@@ -14,7 +14,7 @@ function FilterJobs() {
     const [jobArray, setJobArray] = useState([])
     const [totalCount, setTotalCount] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(5)
     const [firstRender, setFirstRender] = useState(true)
     const [loading, setLoading] = useState(true)
     const initialValues = {
@@ -237,7 +237,7 @@ function FilterJobs() {
                         />
                     </>}
 
-                    <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} class="fas fa-arrow-up"/></button>
+                    <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} className="fas fa-arrow-up"/></button>
 
 
             </section>

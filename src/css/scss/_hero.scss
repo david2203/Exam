@@ -18,10 +18,27 @@
     
     .hero-img{
         position:absolute;
-       height:50%;
-      
+       max-height:50%;
+        height:40vw;
         right:0;
         
+    }
+
+    @media screen and (max-width:700px){
+        align-items: center;
+        .hero-h2{
+            max-width: 100%;
+        }
+        .hero-p {
+            max-width: 100%;
+        }
+        .hero-img{ 
+            position:relative; 
+            justify-self: flex-end;
+            // margin-top:100px;
+            
+            max-height: fit-content;
+        }
     }
 }
 
@@ -40,20 +57,37 @@
         
     }
     .hero-h2{
-        max-width:60%;
+        max-width:40%;
         z-index: 3;
         padding:10px;
     }
     .hero-p {
-        max-width:60%;
+        max-width:40%;
         z-index: 3;
     }
     
     .hero-img{
         position:absolute;
-       height:50%;
-      
+       max-height:50%;
+        height:35vw;
         right:0;
         
+    }
+
+    @media screen and (max-width:700px){
+        align-items: center;
+        .hero-h2{
+            max-width: 100%;
+        }
+        .hero-p {
+            max-width: 100%;
+        }
+        .hero-img{ 
+            position:relative; 
+            justify-self: flex-end;
+            // margin-top:100px;
+            
+            max-height: fit-content;
+        }
     }
 }

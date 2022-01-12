@@ -107,7 +107,7 @@ function ApplyToSpecific() {
     
         
     return (
-        <>
+        <div className='applicationContainer bg-shade'>
             <section className="vh-100" >
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -178,7 +178,7 @@ function ApplyToSpecific() {
     </div>
   </div>
 </section>
-        </>
+        </div>
     )
 }
 

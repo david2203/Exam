@@ -70,12 +70,12 @@ function SpecificJob() {
 
     
         </div>
-        <div> <strong>Does this job fit you? Send and application right <a href="" onClick={sendToApply} > here </a> or go to <a href={jobInfo.data.attributes.External_Apply_URL} >Workdays official application site</a> </strong> </div>
+        <div id="navigateToApplication"> <strong>Does this job fit you? Send and application right <a href="" onClick={sendToApply} > here </a> or go to <a href={jobInfo.data.attributes.External_Apply_URL} >Workdays official application site</a> </strong> </div>
         </> :
         <> loading...</>
         }
             
-            <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} class="fas fa-arrow-up"/></button>
+            <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} className="fas fa-arrow-up"/></button>
 
             
         </div>

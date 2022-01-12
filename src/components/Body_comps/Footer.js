@@ -1,13 +1,17 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 function Footer() {
     return (
         <div className='footer-v1'>
             <div className="footer-col1">
-                Helpfull links
+                <Link to="/PrivacyPolicy" > Privacy & Policy </Link> 
+                <Link to="/AboutUs" > About us </Link> 
+
             </div>
             <div className="footer-col2">
-                Something else
+                <Link to="/WorkWithUs" > Work with us! </Link> 
+                
             </div>
             <div className="footer-col3">
                 <h2>

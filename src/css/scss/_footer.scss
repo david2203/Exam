@@ -1,4 +1,7 @@
 .footer-v1 {
+    a {
+        text-decoration: none;  
+    }
     height:350px;
     background-color: lightgray;
     display: flex;
@@ -6,6 +9,7 @@
     align-items: center;
     padding:10%;
     .footer-col1 {
+        
         display:flex;
         flex-direction: column;
     }
@@ -16,5 +20,20 @@
     .footer-col3 {
         display:flex;
         flex-direction: column;
+    }
+
+    @media screen and (max-width:700px) {
+    flex-direction: column;
+    height:auto;
+    
+    .footer-col1  {
+        margin:10px;
+    }
+    .footer-col2  {
+        margin:10px;
+    }
+    .footer-col3  {
+        margin:10px;
+    }
     }
 }

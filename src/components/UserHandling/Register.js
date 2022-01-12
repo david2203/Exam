@@ -30,6 +30,7 @@ function Register() {
                  email: registerValues.email,
                  password: registerValues.password
              }).then( (e)=> { if(e.data.user)
+                localStorage.setItem("firstLogin", true)
                 navigate("/Login");
                 window.location.reload();
 
@@ -54,8 +55,8 @@ function Register() {
 
     return (
 
-<>
-        <section className="vh-100 bg-shade" >
+<div className='regContainer bg-shade'>
+        <section className="vh-100" >
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
@@ -151,7 +152,7 @@ function Register() {
 </section>
 
 
-</>
+</div>
     )
 }
 

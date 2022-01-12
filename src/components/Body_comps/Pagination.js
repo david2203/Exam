@@ -31,6 +31,7 @@ const Pagination = props => {
         onPageChange(currentPage - 1)
     }
     let lastPage = paginationRange[paginationRange.length - 1];
+    let number = 1
     return (
         <ul
           className={classnames('pagination-container', { [className]: className })}
@@ -48,7 +49,9 @@ const Pagination = props => {
              
             // If the pageItem is a DOT, render the DOTS unicode character
             if (pageNumber === DOTS) {
-              return <li key="uniq2" className="pagination-item dots">&#8230;</li>;
+              number ++
+              return <li key={pageNumber + number} className="pagination-item dots">&#8230;</li>;
+
             }
             
             // Render our Page Pills

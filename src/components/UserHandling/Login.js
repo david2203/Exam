@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Navigate, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import server from "../Config_Env/Config"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -55,7 +55,7 @@ function Login() {
          }
      }
     return (
-        <>
+        <div className='loginContainer bg-shade'>
             <section className="vh-100" >
   <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
@@ -139,7 +139,7 @@ function Login() {
     </div>
   </div>
 </section>
-        </>
+        </div>
     )
 }
 

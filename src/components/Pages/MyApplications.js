@@ -30,7 +30,7 @@ function MyApplications() {
                fields: ["id", "username"]
             },
             job: {
-                fields: ["id", "locationCountry"]
+                fields: ["id", "locationCountry", "title", "Work_Shift", "Brand_Name",]
             }
         }
     }, {
@@ -68,7 +68,7 @@ function MyApplications() {
         const {loading, applicationArray} = useGetApplications()
         const myApplications = []
         if(!loading) {
-            console.log(applicationArray)
+            
             for(let i = 0; i < applicationArray.length; i++) {
                 if(applicationArray[i].attributes.user.data.id === Number(userId)) {
                     myApplications.push(applicationArray[i])
@@ -89,12 +89,14 @@ function MyApplications() {
     return (
         <div>
             {event === "success" ? <> Your application was successfully recieved!<br/> </> : <></>}
-            Here are your pending applications:
+
+            {myApplications.length > 0 ? <>Here are your pending applications:</>: <> You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</>}
+            
 
             {
                 myApplications.map((application, key) => {
                     return (
-                        <Application key={application.id} jobId={application.attributes.job.data.id} />
+                        <Application key={application.id} jobId={application.attributes.job.data.id} jobTitle={application.attributes.job.data.attributes.title} jobLocation={application.attributes.job.data.attributes.locationCountry} jobWorkShift={application.attributes.job.data.attributes.Work_Shift} jobBrand={application.attributes.job.data.attributes.Brand_Name} applicationEmail={application.attributes.applyEmail} startDate={application.attributes.startDate}/>
                     )
                 })
             }

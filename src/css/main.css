@@ -14,10 +14,23 @@
 
 .Nav-v1 a {
   text-decoration: none;
+  margin-left: 10px;
 }
 
 .Nav-v1 .active {
   text-decoration: underline;
+}
+
+@media screen and (min-width: 600px) {
+  .Nav-v1 .logo {
+    width: 20%;
+  }
+  .Nav-v1 .nav-right {
+    width: 40%;
+  }
+  .Nav-v1 .nav-left {
+    width: 40%;
+  }
 }
 
 .col-1 {
@@ -87,6 +100,10 @@
   padding: 10%;
 }
 
+.footer-v1 a {
+  text-decoration: none;
+}
+
 .footer-v1 .footer-col1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -115,6 +132,25 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media screen and (max-width: 700px) {
+  .footer-v1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .footer-v1 .footer-col1 {
+    margin: 10px;
+  }
+  .footer-v1 .footer-col2 {
+    margin: 10px;
+  }
+  .footer-v1 .footer-col3 {
+    margin: 10px;
+  }
 }
 
 .hero-landing {
@@ -149,8 +185,30 @@
 
 .hero-landing .hero-img {
   position: absolute;
-  height: 50%;
+  max-height: 50%;
+  height: 40vw;
   right: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .hero-landing {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero-landing .hero-h2 {
+    max-width: 100%;
+  }
+  .hero-landing .hero-p {
+    max-width: 100%;
+  }
+  .hero-landing .hero-img {
+    position: relative;
+    justify-self: flex-end;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
 }
 
 .hero-jobs {
@@ -186,20 +244,42 @@
 }
 
 .hero-jobs .hero-h2 {
-  max-width: 60%;
+  max-width: 40%;
   z-index: 3;
   padding: 10px;
 }
 
 .hero-jobs .hero-p {
-  max-width: 60%;
+  max-width: 40%;
   z-index: 3;
 }
 
 .hero-jobs .hero-img {
   position: absolute;
-  height: 50%;
+  max-height: 50%;
+  height: 35vw;
   right: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .hero-jobs {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero-jobs .hero-h2 {
+    max-width: 100%;
+  }
+  .hero-jobs .hero-p {
+    max-width: 100%;
+  }
+  .hero-jobs .hero-img {
+    position: relative;
+    justify-self: flex-end;
+    max-height: -webkit-fit-content;
+    max-height: -moz-fit-content;
+    max-height: fit-content;
+  }
 }
 
 .filterFormContainer {
@@ -247,8 +327,19 @@
       -ms-flex-align: center;
           align-items: center;
   margin: 100px;
-  padding: 10px;
+  padding: 30px;
   border: 1px solid grey;
+}
+
+@media screen and (max-width: 700px) {
+  .job-card-container-v1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 30px;
+    padding: 30px 0 30px 0;
+  }
 }
 
 .specificJob-v1 {
@@ -273,6 +364,25 @@
   margin-bottom: 50px;
   padding: 50px;
   border: 1px solid grey;
+}
+
+@media screen and (max-width: 700px) {
+  .specificJob-v1 {
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .specificJob-v1 {
+    margin: 0;
+  }
+  .specificJob-v1 .InfoContainer-specificJob-v1 {
+    border: none;
+    margin-bottom: 10px;
+  }
+  .specificJob-v1 #navigateToApplication {
+    margin: 30px;
+  }
 }
 
 .pagination-container {
@@ -366,6 +476,16 @@
   margin-bottom: 35px;
 }
 
+.loginContainer {
+  padding: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .loginContainer {
+    padding: 20px;
+  }
+}
+
 #toTop {
   display: none;
   /* Hidden by default */
@@ -409,5 +529,60 @@
 
 .none {
   display: none;
+}
+
+.regContainer {
+  padding: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .regContainer {
+    padding: 20px;
+  }
+}
+
+.regContainer section {
+  margin-bottom: 200px;
+}
+
+.applicationContainer {
+  padding: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  .applicationContainer {
+    padding: 20px;
+  }
+}
+
+.applicationContainer section {
+  margin-bottom: 400px;
+}
+
+.application-card-container-v1 {
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 100px;
+  padding: 30px;
+  border: 1px solid grey;
+}
+
+@media screen and (max-width: 700px) {
+  .application-card-container-v1 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 30px;
+    padding: 30px 0 30px 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */

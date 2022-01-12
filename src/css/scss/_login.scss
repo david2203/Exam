@@ -2,3 +2,12 @@
    margin-left:-30px;
    margin-bottom:35px;
 }
+
+.loginContainer {
+   
+   padding:100px;
+   @media screen and (max-width:700px) {
+      padding:20px;
+   }
+}
+
