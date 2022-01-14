@@ -11,6 +11,18 @@
         margin-bottom:50px;
         padding:50px;
         border:1px solid grey;
+        div {
+            max-width:70vw;
+
+            p {
+                max-width:70vw;
+                span {
+                    max-width:70vw !important;
+                    width:70%;
+                   
+                }
+            }
+        }
     }
 
     @media screen and (max-width:700px){

@@ -9,6 +9,8 @@ function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDes
         navigate(`/SpecificJob?id=${jobId}`)
   
     }
+
+    
     return (
         <div className='job-card-container-v1' onClick={showWholeJobCard}>
 

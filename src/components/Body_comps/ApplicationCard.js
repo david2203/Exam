@@ -1,13 +1,39 @@
 import React, {useState} from 'react'
+import Modal from 'react-modal';
+import axios from "axios"
+import server from "../Config_Env/Config"
 
-function ApplicationCard({jobId,jobTitle,jobLocation, jobWorkShift, jobBrand, applicationEmail, startDate}) {
+function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand, applicationEmail, startDate}) {
 
+    const customStyles = {
+        content: {
+          top: '50%',
+          left: '50%',
+          right: 'auto',
+          bottom: 'auto',
+          marginRight: '-50%',
+          transform: 'translate(-50%, -50%)',
+        },
+      };
     const [openModal, setOpenModal] = useState(false)
-    function revokeApplication() {
+    function revokeApplication(e) {
+        e.preventDefault()
+
+        axios.delete(`${server}api/applications/${id}`).then((response)=> {
+            console.log(response)
+            window.location.reload()
+        })
+        .catch((err) => {
+            console.log(err)
+        })
         
     }
     function reasureRevoke() {
         setOpenModal(true)
+    }
+
+    function closeModal() {
+        setOpenModal(false)
     }
     return (
         <div className='application-card-container-v1' >
@@ -31,7 +57,24 @@ function ApplicationCard({jobId,jobTitle,jobLocation, jobWorkShift, jobBrand, ap
         <br/>
             
             
-            
+        <Modal
+        isOpen={openModal}
+        ariaHideApp={false}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+   
+        
+        <div>Are you sure you want to revoke your application? </div>
+        <form>
+            <button onClick={revokeApplication}>Yes</button>
+            <button onClick={closeModal}>No</button>
+
+          
+        </form>
+      </Modal>
             
 
         </div>
