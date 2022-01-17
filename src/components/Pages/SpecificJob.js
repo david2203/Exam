@@ -23,7 +23,7 @@ function SpecificJob() {
                     setJobInfo(job.data)
 
                     const existingSaved = await axios.get(`${server}api/users/${userId}`)
-                    setExisting(existingSaved.data.savedJobsId)
+                    setExisting(existingSaved.data.savedJobsId.split(","))
                 }catch(err) {
                     console.log(err)
                 }
@@ -68,12 +68,13 @@ function SpecificJob() {
      
       function addToSaved(e) {
             finalData.push(existing)
-            finalData.push(jobId)
+        
+            console.log(finalData)
             axios.put(`${server}api/users/${userId}`, {
-                "data": {
-                    "savedJobsId": finalData
-                }
+
+                    "savedJobsId":finalData
             })
+            // .then(navigate("/savedJobs"))
       }
     return (
         <div className="specificJob-v1">
@@ -93,7 +94,7 @@ function SpecificJob() {
         </div>
        
         <div id="navigateToApplication"> <strong>Does this job fit you? Send and application right <a href="" onClick={sendToApply} > here </a> or go to <a href={jobInfo.data.attributes.External_Apply_URL} >Workdays official application site</a> </strong> </div>
-        <div> If you want to apply later, add this job to your watch list! <button onClick={addToSaved}>Add</button></div>
+        <div> If you want to apply later, add this job to your watch list! <button className="button-81" onClick={addToSaved}>Add</button></div>
         </> :
         <> loading...</>
         }

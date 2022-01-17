@@ -203,7 +203,7 @@ function FilterJobs() {
 
 
 
-                    <button type="submit">Filter!</button>
+                    <button className="button-81" type="submit">Filter!</button>
                 </form>
 
             </section>

@@ -52,7 +52,7 @@ function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand
             
             <p><strong> You applied with: </strong> {applicationEmail}</p>
             <p><strong> Your prefered start date: </strong> {startDate}</p>
-            <button onClick={reasureRevoke}> Revoke Application </button>
+            <button className="button-81" onClick={reasureRevoke}> Revoke Application </button>
         </div>
         <br/>
             
@@ -69,8 +69,8 @@ function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand
         
         <div>Are you sure you want to revoke your application? </div>
         <form>
-            <button onClick={revokeApplication}>Yes</button>
-            <button onClick={closeModal}>No</button>
+            <button className="button-81" onClick={revokeApplication}>Yes</button>
+            <button className="button-81" onClick={closeModal}>No</button>
 
           
         </form>

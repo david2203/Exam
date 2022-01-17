@@ -28,9 +28,9 @@ function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDes
             
             <p><strong> Job description: </strong> </p>
         {jobDescSum ?
-         <div dangerouslySetInnerHTML={{__html: jobDescSum + "<span style= color:blue>...Click to read more </span>"}} />
+         <div dangerouslySetInnerHTML={{__html: jobDescSum + "..." +  "<button class=button-81 > Click to read more </button>"}} />
          :
-        <div dangerouslySetInnerHTML={{__html: jobDescShort + "<span style= color:blue>...Click to read more </span>"}} />
+        <div dangerouslySetInnerHTML={{__html: jobDescShort + "..." + "<button class=button-81 > Click to read more </button>"}} />
             
         }
         </div>

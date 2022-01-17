@@ -1,3 +1,4 @@
+
 .Nav-v1 {
     height:75px;
     background-color:rgb(213, 167, 167);
@@ -22,7 +23,9 @@
     .active {
         text-decoration: underline;
     }
-
+    .slide-menu {
+        display:none;
+    }
     @media screen and (min-width:600px) {
         .logo {
             width:20%;
@@ -37,4 +40,121 @@
    
         
     }
+
+    @media screen and (max-width:630px){
+       
+        .nav-left a {
+            display:none;
+        }
+    
+          .menu-btn {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 80px;
+            left:20px;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            // border: 3px solid #fff; 
+            z-index: 5;
+          }
+          .menu-btn__burger {
+       
+            width: 30px;
+            height: 3px;
+            background: rgb(250, 250, 250);
+            border-radius: 5px;
+            cursor:pointer;
+            transition: all .5s ease-in-out;
+          }
+          .menu-btn__burger::before,
+          .menu-btn__burger::after {
+            content: '';
+            
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left:27px;
+            background: rgb(255, 255, 255);
+            border-radius: 5px;
+            
+            transition: all .5s ease-in-out;
+          }
+          .menu-btn__burger::before {
+            transform: translateY(-16px);
+          }
+          .menu-btn__burger::after {
+            transform: translateY(16px);
+          }
+          /* ANIMATION */
+          .menu-btn.open .menu-btn__burger {
+            background: transparent;
+            box-shadow: none;
+          }
+          .menu-btn.open .menu-btn__burger::before {
+            transform: rotate(45deg) ;
+          }
+          .menu-btn.open .menu-btn__burger::after {
+            transform: rotate(-45deg) 
+            ;
+          }
+
+          .burger-left {
+            display:flex; 
+            flex-direction: column;
+            a {
+                margin:10px 0 10px 0;
+                
+                width:250px;
+            }
+
+        }
+          .slide-menu {
+            display:block;
+            height:100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            opacity:0;
+            background-color: rgb(225, 157, 157);
+            clip-path: polygon(0 0, 100% 0, 0 100%, 0 100%);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 100px;
+            
+          }
+          .slide-menu.active {
+            display:block;
+            height:100%;
+            width: 60vw;
+            
+            position: fixed;
+            z-index: 4;
+            top: 0;
+            left: 0;
+            background-color: rgb(235, 213, 213);
+            clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
+            opacity: 0.9;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 100px;
+            
+            
+         
+            
+            
+          }
+
+
+         
+
+    }
+
+    
 }
+
+
