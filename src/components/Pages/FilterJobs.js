@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 import axios from "axios";
 import server from "../Config_Env/Config"
 import Job from "../Body_comps/JobCard"
@@ -131,7 +132,11 @@ function FilterJobs() {
     return (
         <>
             <section className="filterFormContainer">
-                <form onSubmit={filterSearch} className='filterForm'>
+
+                <div>Go to your <Link to="/savedJobs"> Saved Jobs</Link></div> 
+                or filter through all existing jobs down below! 
+                
+                <br/><br/><form onSubmit={filterSearch} className='filterForm'>
                     <label>Chose prefered work location: </label>
                     <select onChange={handleFilter} name="workLocation" id="" className="">
                         <option>Show all</option>

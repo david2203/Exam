@@ -90,7 +90,7 @@ function MyApplications() {
         <div>
             {event === "success" ? <> Your application was successfully recieved!<br/> </> : <></>}
 
-            {myApplications.length > 0 ? <>Here are your pending applications:</>: <> You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</>}
+            {myApplications.length > 0 ? <><br/><h2>Here are your pending applications:</h2></>: <> <br/><h2>You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</h2><br/></>}
             
 
             {
@@ -100,6 +100,14 @@ function MyApplications() {
                     )
                 })
             }
+
+            {myApplications.length > 4 && <Pagination
+                            className="pagination-bar"
+                            currentPage={currentPage}
+                            totalCount={totalCount}
+                            pageSize={limit}
+                            onPageChange={page => setCurrentPage(page)}
+                        />}
         </div>
     )
 }

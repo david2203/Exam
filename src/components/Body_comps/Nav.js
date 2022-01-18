@@ -66,6 +66,15 @@ function Nav() {
         :
 
             <div className="Nav-v1">
+                <div className={burgerState ? "menu-btn open" :"menu-btn"} onClick={toggleBurger}>
+                <div className="menu-btn__burger" ></div>
+               </div>
+               <div className={burgerState ? "slide-menu active" : "slide-menu"}>
+                   <div className="burger-left">
+               <Link to="/"  onClick={setActive} id="LinkToLanding" className={active === "activeLanding" ? "active": ""}> Home </Link>
+            
+                </div>
+               </div>
             <div className='nav-left col-4'> 
             <Link  to="/" onClick={setActive} id="LinkToLanding" className={active === "activeLanding"  ? "active": ""} > Home </Link>
             

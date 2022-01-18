@@ -61,17 +61,29 @@
     }
 
     @media screen and (max-width:700px) {
-    // flex-direction: column;
-    // height:auto;
+
+        .topPart {
+            flex-direction: column;
+            height:auto;
+            padding:40px;
+        }
     
-    // .footer-col1  {
-    //     margin:10px;
-    // }
-    // .footer-col2  {
-    //     margin:10px;
-    // }
-    // .footer-col3  {
-    //     margin:10px;
-    // }
+    
+    .footer-col1  {
+        margin:10px;
+        height:auto;
+    }
+    .footer-col2  {
+        margin:10px;
+        height:auto;
+    }
+    .footer-col3  {
+        margin:10px;
+        height:auto;
+    }
+
+    .footer-col4 {
+        margin-right:0;
+    }
     }
 }

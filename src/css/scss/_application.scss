@@ -6,4 +6,11 @@
    section {
     margin-bottom:400px;
     }
+
+    @media screen and (min-width:992px){
+        section {
+            margin-bottom:0;
+        }
+        
+    }
 }

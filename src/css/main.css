@@ -295,6 +295,32 @@
           flex-direction: column;
 }
 
+@media screen and (max-width: 700px) {
+  .footer-v1 .topPart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    padding: 40px;
+  }
+  .footer-v1 .footer-col1 {
+    margin: 10px;
+    height: auto;
+  }
+  .footer-v1 .footer-col2 {
+    margin: 10px;
+    height: auto;
+  }
+  .footer-v1 .footer-col3 {
+    margin: 10px;
+    height: auto;
+  }
+  .footer-v1 .footer-col4 {
+    margin-right: 0;
+  }
+}
+
 .hero-landing {
   height: 500px;
   background-color: #bdeebd;
@@ -426,9 +452,9 @@
 
 .filterFormContainer {
   margin: 50px;
-  height: 400px;
+  height: 500px;
   padding: 30px;
-  background-color: #f7d579;
+  background-color: #80cde4;
 }
 
 .filterFormContainer .filterForm {
@@ -466,6 +492,7 @@
   margin: 100px;
   padding: 30px;
   border: 1px solid grey;
+  background-color: blanchedalmond;
 }
 
 @media screen and (max-width: 700px) {
@@ -707,6 +734,12 @@
 
 .applicationContainer section {
   margin-bottom: 400px;
+}
+
+@media screen and (min-width: 992px) {
+  .applicationContainer section {
+    margin-bottom: 0;
+  }
 }
 
 .application-card-container-v1 {

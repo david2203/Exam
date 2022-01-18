@@ -7,6 +7,8 @@ import arrow from "../Icons/arrow.png";
 import Jobs from './Jobs';
 
 function SpecificJob() {
+
+    
     const userId = localStorage.getItem("userId")
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
@@ -23,7 +25,7 @@ function SpecificJob() {
                     setJobInfo(job.data)
 
                     const existingSaved = await axios.get(`${server}api/users/${userId}`)
-                    setExisting(existingSaved.data.savedJobsId.split(","))
+                    setExisting(existingSaved.data.savedIds.savedJobs)
                 }catch(err) {
                     console.log(err)
                 }
@@ -64,18 +66,38 @@ function SpecificJob() {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
       
-      const finalData = []
-     
+      const addedToExisting = []
+      
       function addToSaved(e) {
-            finalData.push(existing)
-        
-            console.log(finalData)
+          
+            // for(let i = 0; i < existing.length; i++) {
+            //     addedArray.push(existing[i])
+            // }
+
+            existing.push(Number(jobId))
+            existing.sort()
+            for(let i = 0; i < existing.length; i++){
+                function compare(a, b) {
+                    if(a !== b) {
+                     addedToExisting.push(a)
+                    }
+                }
+         
+                compare(existing[i], existing[i+1])
+            }
+       
             axios.put(`${server}api/users/${userId}`, {
 
-                    "savedJobsId":finalData
+                    "savedIds": {
+                        "savedJobs" : addedToExisting
+                    }
             })
-            // .then(navigate("/savedJobs"))
+            .then(navigate("/savedJobs"))
       }
+
+      useEffect(()=> {
+        topFunction()
+    },[])
     return (
         <div className="specificJob-v1">
            <Hero/>

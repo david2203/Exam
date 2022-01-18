@@ -8,6 +8,8 @@ function Landingpage() {
     return (
         <div className="body-v1">
            <HeroLadning/>
+
+           {/* <WelcomeMessage/> */}
         </div>
     )
 }

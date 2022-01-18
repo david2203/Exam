@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navigate, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDesc, jobDescSum, jobProfiles, workShift, startDate}) {
     const brandUpper = brandName.charAt(0).toUpperCase() + brandName.slice(1)
@@ -7,12 +7,11 @@ function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDes
     const navigate = useNavigate()
     function showWholeJobCard() {
         navigate(`/SpecificJob?id=${jobId}`)
-  
     }
 
     
     return (
-        <div className='job-card-container-v1' onClick={showWholeJobCard}>
+        <div className='job-card-container-v1' >
 
             <div className="jobcard-left col-5">
             <p>  <strong> Job Profile: </strong> {jobProfiles}</p>
@@ -28,9 +27,9 @@ function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDes
             
             <p><strong> Job description: </strong> </p>
         {jobDescSum ?
-         <div dangerouslySetInnerHTML={{__html: jobDescSum + "..." +  "<button class=button-81 > Click to read more </button>"}} />
+         <div dangerouslySetInnerHTML={{__html: jobDescSum + "..." +  "<button class=button-81 > Click to read more </button>"}} onClick={showWholeJobCard}/>
          :
-        <div dangerouslySetInnerHTML={{__html: jobDescShort + "..." + "<button class=button-81 > Click to read more </button>"}} />
+        <div dangerouslySetInnerHTML={{__html: jobDescShort + "..." + "<button class=button-81 > Click to read more </button>"}} onClick={showWholeJobCard}/>
             
         }
         </div>
