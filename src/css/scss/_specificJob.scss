@@ -2,6 +2,8 @@
 
     margin:100px;
     .InfoContainer-specificJob-v1 {
+
+        
         min-height: 100vh;
 
         display:flex;
@@ -42,4 +44,9 @@
         }
     }
     
+}
+
+.danger {
+    max-width:60%;
+    overflow: auto;
 }

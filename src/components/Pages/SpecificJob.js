@@ -92,7 +92,9 @@ function SpecificJob() {
                         "savedJobs" : addedToExisting
                     }
             })
-            .then(navigate("/savedJobs"))
+            .then(
+            navigate("/savedJobs"),
+            window.location.reload())
       }
 
       useEffect(()=> {
@@ -110,7 +112,7 @@ function SpecificJob() {
         <p><strong> Number of openings:</strong> {jobInfo.data.attributes.Number_of_Openings_Available}</p>
         <p><strong> Work-shift: </strong> {jobInfo.data.attributes.Work_Shift}</p>
         <p><strong> Start date: </strong> {jobInfo.data.attributes.startDate}</p>
-        <p><strong> Job description: </strong> </p>  <div dangerouslySetInnerHTML={{__html: jobInfo.data.attributes.Job_Description }} />
+        <p><strong> Job description: </strong> </p>  <div className="danger" dangerouslySetInnerHTML={{__html: jobInfo.data.attributes.Job_Description }} />
 
     
         </div>

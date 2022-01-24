@@ -18,21 +18,14 @@ function MyApplications() {
     var qs = require('qs');
 
     const initialQuery = qs.stringify({
-        filters: {
+        // filters: {
             
-        },
+        // },
         pagination: {
             page: currentPage,
             pageSize: limit,
         },
-        populate: {
-            user: {
-               fields: ["id", "username"]
-            },
-            job: {
-                fields: ["id", "locationCountry", "title", "Work_Shift", "Brand_Name",]
-            }
-        }
+        fields: ["applyEmail"]
     }, {
         encodeValuesOnly: true,
     });
@@ -46,9 +39,10 @@ function MyApplications() {
            
                 const getMyApplications = async() => {
                     try {
-                        const response = await axios.get(`${server}api/applications?${initialQuery}`)
+                        const response = await axios.get(`${server}api/applications?${initialQuery}&&populate=*`)
                         setTotalCount(response.data.meta.pagination.total)
                         setApplicationArray(response.data.data)
+                        console.log(response)
                         
                     }catch(err) {
                         console.log(err)
@@ -88,9 +82,9 @@ function MyApplications() {
      
     return (
         <div>
-            {event === "success" ? <> Your application was successfully recieved!<br/> </> : <></>}
+            {event === "success" ? <div className="successApp"> Your application was successfully recieved!<br/> </div> : <></>}
 
-            {myApplications.length > 0 ? <><br/><h2>Here are your pending applications:</h2></>: <> <br/><h2>You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</h2><br/></>}
+            {myApplications.length > 0 ? <><br/><h2>Here are your pending applications:</h2></>: <> <br/><h2 className="nothingToShow">You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</h2><br/></>}
             
 
             {

@@ -1,18 +1,37 @@
 .footer-v1 {
     height:auto ;
+    
     color:white;
     background-color: rgb(0, 64, 104);
     .topPart{
         a {
             color:white;
-             
+            text-decoration: none;
         }
         
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        .upper {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
         
-
+        .footer-col4 {
+            display:flex;
+            justify-content: center;
+            align-items: center; 
+            height:400px;  
+            .messageBox {
+                display:flex;
+                flex-direction: column;
+                margin-left: 10%;
+            }
+        }
+        
+        flex-direction: column;
+        height:auto;
+        padding:40px;
         border-bottom: 1px solid rgb(53, 94, 172);
     }
 
@@ -31,59 +50,56 @@
         
     }
     .footer-col1 {
-        margin-left:10%;
-       
+        
         margin-top:10%;
-        height:300px;
+        height:100px;
         display:flex;
         flex-direction: column;
     }
     .footer-col2 {
         margin-top:10%;
-        
-        height:300px;
+       margin-left:10%;
+       margin-right:10%;
+       height:100px;
         display:flex;
         flex-direction: column;
     }
     .footer-col3 {
         margin-top:10%;
-        
-        height:300px;
+        height:100px;
         display:flex;
         flex-direction: column;
     }
     .footer-col4 {
-        margin-top:10%;
-        margin-right:10%;
-        height: 500px;
-        display:flex;   
-        flex-direction: column;
+      
+        height:auto;
+        
     }
 
     @media screen and (max-width:700px) {
 
-        .topPart {
+        .upper {
             flex-direction: column;
-            height:auto;
-            padding:40px;
         }
-    
-    
-    .footer-col1  {
-        margin:10px;
-        height:auto;
-    }
-    .footer-col2  {
-        margin:10px;
-        height:auto;
-    }
-    .footer-col3  {
-        margin:10px;
-        height:auto;
-    }
+        .footer-col1 {
+        
+            height:auto;
+        }
+        .footer-col2 {
+            height:auto;
+        }
+        .footer-col3 {
+            height:auto;
+        }
 
-    .footer-col4 {
-        margin-right:0;
-    }
+        .footer-col4 {
+            margin-top: 10%;
+            flex-direction: column;
+            
+            
+        }
+        .messageBox {
+            margin-left: 0 !important;
+        }
     }
 }

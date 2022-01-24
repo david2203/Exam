@@ -1,0 +1,11 @@
+.aboutUsContainer {
+    height:auto;
+    min-height: 500px;
+    padding:100px;
+    display:flex;
+    flex-direction: column;
+
+    @media screen and (max-width:500px){
+        padding:50px;
+    }
+}

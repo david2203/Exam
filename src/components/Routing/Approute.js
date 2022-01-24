@@ -17,6 +17,11 @@ import ForgottenPW from "../UserHandling/ForgottenPW";
 import ApplyToSpecific from "../Pages/ApplyToSpecific";
 import MyApplications from "../Pages/MyApplications";
 import SavedJobs from "../Pages/SavedJobs";
+import AboutUs from "../Pages/AboutUs";
+import AboutBrand from "../Pages/AboutBrand";
+import PrivacyPolicy from "../Pages/PrivacyPolicy";
+import TermsConditions from "../Pages/TermsConditions";
+import WorkWithUs from "../Pages/WorkWithUs";
 
 function Approute() {
     return (
@@ -37,6 +42,16 @@ function Approute() {
                 <Route path="/ApplyToSpecific" element={<ApplyToSpecific/>} />
                 <Route path="/MyApplications" element={<MyApplications/>} />
                 <Route path="/SavedJobs" element={<SavedJobs/>} />
+                <Route path="/AboutUs" element={<AboutUs/>} />
+                <Route path="/AboutBrand" element={<AboutBrand/>} />
+                <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
+                <Route path="/Terms" element={<TermsConditions/>} />
+                <Route path="/WorkWithUs" element={<WorkWithUs/>} />
+
+
+
+
+
 
 
 

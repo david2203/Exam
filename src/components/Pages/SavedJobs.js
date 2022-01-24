@@ -38,20 +38,8 @@ function SavedJobs() {
 
    
    const {loading, jobArray} = useGetSaved()
-   const [savedJobs, setSavedJobs] = useState([])
-   if(!loading){
-      console.log(jobArray.savedJobs)
-      for(let i = 0; i < jobArray.savedJobs.length; i++) {
-        // const getSavedJobs = async() => {
-        //     const response  = await axios.get(`${server}api/jobs?id=${jobArray[i]}`)
-        //     setSavedJobs(response)
-        //     console.log(response)
-        // }
-        // getSavedJobs()
-        
-      }
-      
-   }
+   
+   
 
 
    
@@ -60,16 +48,16 @@ function SavedJobs() {
             {!loading && jobArray.savedJobs.length !== 0  ? jobArray.savedJobs.map((job,key)=> {
                 
                 return(
-                    <>
+                    <div className='savedJobsContainer'>
                     <br/>
                     <h2>Here are your saved jobs!</h2>
                     <SavedJobsProps key={key} id={job} existing={jobArray}/>
-                    </>
+                    </div>
                 )
                 
-            }) : <>You haven`t saved any jobs yet! <br/>Please head over to the job filtering page: 
-                    <Link to="/jobs"> Jobs</Link>
-                </> }
+            }) : <h2 className="nothingSaved">You haven`t saved any jobs yet! <br/>Please head over to the job filtering page: 
+                   <p> <Link to="/jobs"> Jobs</Link></p>
+                </h2> }
             
             
         </div>

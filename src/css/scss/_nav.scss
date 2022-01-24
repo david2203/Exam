@@ -21,7 +21,8 @@
         margin-left:10px;
     }
     .active {
-        text-decoration: underline;
+        font-size: 25px;
+        color:black;
     }
     .slide-menu {
         display:none;
@@ -130,15 +131,15 @@
           .slide-menu.active {
             display:block;
             height:100%;
-            width: 60vw;
+            width: 70vw;
             
             position: fixed;
             z-index: 4;
             top: 0;
             left: 0;
             background-color: rgb(235, 213, 213);
-            clip-path: polygon(0 0, 100% 0, 20% 100%, 0 100%);
-            opacity: 0.9;
+            clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
+            opacity: 1;
             overflow-x: hidden;
             transition: 0.5s;
             padding-top: 100px;

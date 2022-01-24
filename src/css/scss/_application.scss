@@ -1,4 +1,5 @@
 .applicationContainer {
+    
     padding:100px;
    @media screen and (max-width:700px) {
       padding:20px;
@@ -13,4 +14,16 @@
         }
         
     }
+}
+
+.nothingToShow {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:100px;
+    min-height:600px;    
+}
+.successApp {
+    padding:10px;
+    color:green;
 }

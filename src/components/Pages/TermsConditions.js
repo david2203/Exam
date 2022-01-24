@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 
-function PrivacyPolicy() {
+function TermsConditions() {
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -9,16 +9,10 @@ function PrivacyPolicy() {
         topFunction()
     },[])
     return (
-        <div className="privacyPolicyContainer">
-            <h2>Privacy & Policy</h2>
-            <p>1. lorem </p>
-            <p>2. lorem </p>
-            <p>3. lorem </p>
-            <p>4. lorem </p>
-            <p>5. lorem </p>
-
+        <div className="termsConditionsContainer">
+            
         </div>
     )
 }
 
-export default PrivacyPolicy
+export default TermsConditions
