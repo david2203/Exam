@@ -68,3 +68,120 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+------------------------------------ Conditions for the use of this application --------------------------------
+This application is build in the latest version of react at the time (17.0.2) and with react-router-dom v6 and thus, 
+following are the used versions of different libraries etc (taken from package.json file):
+{
+  "name": "workday-api-exam",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@animated-burgers/burger-rotate": "^1.1.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.24.0",
+    "bootstrap": "^5.1.3",
+    "bootstrap-icons": "^1.7.2",
+    "classnames": "^2.3.1",
+    "node-sass": "^7.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-modal": "^3.14.4",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+
+Additionaly i have used Strapi CMS, and for this application to work, You will need a Strapi v4 server, with 3 tables.
+1: user (from: users-permissions) with following columns:
+Username - Text 	
+Email - Email 	
+Provider - Text 
+Password - Password 	
+ResetPasswordToken - Text 	
+ConfirmationToken - Text 	
+Confirmed - Boolean 	
+Blocked - Boolean 	
+Role - Relation with Role (from: users-permissions)	
+Applications - Relation with Application (one user can have many applications but one application belongs to one user) 	
+SavedIds - JSON 	
+
+2: Jobs with following columns:
+All_Supervisory_Orgs - Text 	
+Brand_Name - Text 	
+Employee_Type - Text 	
+ISO2Char - Text 	
+Job_Description - Text 	
+Job_Description_Summary - Text 	
+External_Apply_URL - Text 	
+External_Posting_URL - Text 	
+Job_Profiles - Text 	
+Work_Shift - Text 	
+JobFamily - Text 	
+JobFamilyGroup - Text 	
+JobRequisitionId - Text 	
+StartDate - Text 	
+TimeType - Text 
+Title - Text 	
+WorkerSubType - Text 	
+Job_Requisition - Text 	
+Number_of_Openings_Available - Text 	
+RA_ESI_Brand - Text 	
+Scheduled_Weekly_Hours - Text 	
+LocationCountry - Text 	
+Locations - Text 	
+EndDate - Text 	
+Applications - Relation with Application (one application has one job, but one job can have many applications)
+
+3: Applications with following columns:
+User - Relation with User (from: users-permissions)	(one user can have many applications, but one application belongs to one user)
+Job - Relation with Jobs 	
+ApplyEmail - Email 	
+CV - Media 	
+StartDate - Date
+
+
+
+Furthermore, in order to recieve the data from the Workday API, certain ENV variables are needed that im not allowed to make public. If you want to try it out, write to me and i can ask for access. 
+
+Comands that probably need to be run if you want to try out this project: 
+npm i axios
+
+
+
+
+
+
