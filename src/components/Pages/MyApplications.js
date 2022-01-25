@@ -19,7 +19,7 @@ function MyApplications() {
 
     const initialQuery = qs.stringify({
         // filters: {
-            
+
         // },
         pagination: {
             page: currentPage,
@@ -30,79 +30,79 @@ function MyApplications() {
         encodeValuesOnly: true,
     });
 
-    
+
 
     // fucntion for getting the data ready for show
-        const useGetApplications = () => {
-            const [applicationArray, setApplicationArray] = useState([])
-            const [loading, setLoading] = useState(true)
-           
-                const getMyApplications = async() => {
-                    try {
-                        const response = await axios.get(`${server}api/applications?${initialQuery}&&populate=*`)
-                        setTotalCount(response.data.meta.pagination.total)
-                        setApplicationArray(response.data.data)
-                        console.log(response)
-                        
-                    }catch(err) {
-                        console.log(err)
-                    }
-                    setLoading(false)
-                }
-                
-            useEffect(() => {
-                getMyApplications()
-            },[])
-            
-            return(
-                {applicationArray, loading}
-            )
-        }
-        const [done, setDone] = useState(false)
-        const {loading, applicationArray} = useGetApplications()
-        const myApplications = []
-        if(!loading) {
-            
-            for(let i = 0; i < applicationArray.length; i++) {
-                if(applicationArray[i].attributes.user.data.id === Number(userId)) {
-                    myApplications.push(applicationArray[i])
-                    if(i === applicationArray.length - 1) {
-                       
-                       
-                        
-                    }
-                    
-                }
-                
+    const useGetApplications = () => {
+        const [applicationArray, setApplicationArray] = useState([])
+        const [loading, setLoading] = useState(true)
+
+        const getMyApplications = async () => {
+            try {
+                const response = await axios.get(`${server}api/applications?${initialQuery}&&populate=*`)
+                setTotalCount(response.data.meta.pagination.total)
+                setApplicationArray(response.data.data)
+                console.log(response)
+
+            } catch (err) {
+                console.log(err)
             }
+            setLoading(false)
         }
 
-        
-     
-     
+        useEffect(() => {
+            getMyApplications()
+        }, [])
+
+        return (
+            { applicationArray, loading }
+        )
+    }
+    const [done, setDone] = useState(false)
+    const { loading, applicationArray } = useGetApplications()
+    const myApplications = []
+    if (!loading) {
+
+        for (let i = 0; i < applicationArray.length; i++) {
+            if (applicationArray[i].attributes.user.data.id === Number(userId)) {
+                myApplications.push(applicationArray[i])
+                if (i === applicationArray.length - 1) {
+
+
+
+                }
+
+            }
+
+        }
+    }
+
+
+
+
     return (
         //MyApplications jsx / looping through application.js
         <div>
-            {event === "success" ? <div className="successApp"> Your application was successfully recieved!<br/> </div> : <></>}
+            {event === "success" ? <div className="successApp"> Your application was successfully recieved!<br /> </div> : <></>}
 
-            {myApplications.length > 0 ? <><br/><h2>Here are your pending applications:</h2></>: <> <br/><h2 className="nothingToShow">You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</h2><br/></>}
-            
+            {myApplications.length > 0 ? <><br /><h2>Here are your pending applications:</h2></> : <> <br /><h2 className="nothingToShow">You dont have any applications curently! Please head over to Jobs and apply for one of the jobs!</h2><br /></>}
+
 
             {
                 myApplications.map((application, key) => {
                     return (
-                        <Application key={application.id} id={application.id} jobId={application.attributes.job.data.id} jobTitle={application.attributes.job.data.attributes.title} jobLocation={application.attributes.job.data.attributes.locationCountry} jobWorkShift={application.attributes.job.data.attributes.Work_Shift} jobBrand={application.attributes.job.data.attributes.Brand_Name} applicationEmail={application.attributes.applyEmail} startDate={application.attributes.startDate}/>
+                        <Application key={application.id} id={application.id} jobId={application.attributes.job.data.id} jobTitle={application.attributes.job.data.attributes.title} jobLocation={application.attributes.job.data.attributes.locationCountry} jobWorkShift={application.attributes.job.data.attributes.Work_Shift} jobBrand={application.attributes.job.data.attributes.Brand_Name} applicationEmail={application.attributes.applyEmail} startDate={application.attributes.startDate} />
                     )
                 })
             }
 
             {myApplications.length > 4 && <Pagination
-                            className="pagination-bar"
-                            currentPage={currentPage}
-                            totalCount={totalCount}
-                            pageSize={limit}
-                            onPageChange={page => setCurrentPage(page)}
-                        />}
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={totalCount}
+                pageSize={limit}
+                onPageChange={page => setCurrentPage(page)}
+            />}
         </div>
     )
 }

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import server from "../Config_Env/Config"
 import Job from "../Body_comps/JobCard"
@@ -11,7 +11,7 @@ import arrow from "../Icons/arrow.png";
 
 function FilterJobs() {
 
-//setting states
+    //setting states
     const [jobArray, setJobArray] = useState([])
     const [totalCount, setTotalCount] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
@@ -118,19 +118,19 @@ function FilterJobs() {
 
     // button for going back to top if you have scrolled down to far
     const [display, setDisplay] = useState("block")
-    window.onscroll = function() {takeMeToTop()};
+    window.onscroll = function () { takeMeToTop() };
     function takeMeToTop() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        setDisplay("block")
+            setDisplay("block")
         } else {
-        setDisplay("none")
+            setDisplay("none")
         }
     }
 
-      function topFunction() {
+    function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      }
+    }
 
 
     return (
@@ -141,10 +141,10 @@ function FilterJobs() {
         <>
             <section className="filterFormContainer">
 
-                <div>Go to your <Link to="/savedJobs"> Saved Jobs</Link></div> 
-                or filter through all existing jobs down below! 
-                
-                <br/><br/><form onSubmit={filterSearch} className='filterForm'>
+                <div>Go to your <Link to="/savedJobs"> Saved Jobs</Link></div>
+                or filter through all existing jobs down below!
+
+                <br /><br /><form onSubmit={filterSearch} className='filterForm'>
                     <label>Chose prefered work location: </label>
                     <select onChange={handleFilter} name="workLocation" id="" className="">
                         <option>Show all</option>
@@ -250,7 +250,7 @@ function FilterJobs() {
                         />
                     </>}
 
-                    <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} className="fas fa-arrow-up"/></button>
+                <button onClick={topFunction} id="toTop" className={display} title="Go to top"><img src={arrow} className="fas fa-arrow-up" /></button>
 
 
             </section>

@@ -1,15 +1,15 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
 // page for information about working with WMS
 function WorkWithUs() {
-   const userName = localStorage.getItem("username")
+    const userName = localStorage.getItem("username")
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-      }
-    useEffect(()=> {
+    }
+    useEffect(() => {
         topFunction()
-    },[])
+    }, [])
     return (
         <div className="workWithUsContainer">
             <h2>Hello {userName} </h2>
