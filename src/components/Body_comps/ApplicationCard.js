@@ -4,7 +4,10 @@ import axios from "axios"
 import server from "../Config_Env/Config"
 
 function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand, applicationEmail, startDate}) {
+    // Card that is looped through from MyApplications.js
 
+
+    //style of the modal for revoke function
     const customStyles = {
         content: {
           top: '50%',
@@ -16,6 +19,8 @@ function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand
         },
       };
     const [openModal, setOpenModal] = useState(false)
+
+    //delete application function
     function revokeApplication(e) {
         e.preventDefault()
 
@@ -35,7 +40,11 @@ function ApplicationCard({id, jobId,jobTitle,jobLocation, jobWorkShift, jobBrand
     function closeModal() {
         setOpenModal(false)
     }
+
+
     return (
+
+        //html card of all applications
         <div className='application-card-container-v1' >
 
             <div className="jobcard-left col-5">

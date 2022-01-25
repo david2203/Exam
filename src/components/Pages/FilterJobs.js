@@ -11,7 +11,7 @@ import arrow from "../Icons/arrow.png";
 
 function FilterJobs() {
 
-
+//setting states
     const [jobArray, setJobArray] = useState([])
     const [totalCount, setTotalCount] = useState(0)
     const [currentPage, setCurrentPage] = useState(1)
@@ -26,7 +26,7 @@ function FilterJobs() {
     }
     const [filterValues, setFilterValues] = useState(initialValues)
 
-
+    //filter functionality for the jobs
     function handleFilter(e) {
         if (e.target.value === "Show all") {
             setFilterValues({ ...filterValues, [e.target.name]: "" })
@@ -42,6 +42,8 @@ function FilterJobs() {
 
     }
 
+
+    //use of Quary string (Easy to use with strapi v4) and applying filter to the quary
     var qs = require('qs');
 
     const initialQuery = qs.stringify({
@@ -81,6 +83,7 @@ function FilterJobs() {
         encodeValuesOnly: true,
     });
 
+    // filter function ()
     function filterSearch(e) {
         if (e) {
             e.preventDefault()
@@ -113,6 +116,7 @@ function FilterJobs() {
         }
     }, [currentPage])
 
+    // button for going back to top if you have scrolled down to far
     const [display, setDisplay] = useState("block")
     window.onscroll = function() {takeMeToTop()};
     function takeMeToTop() {
@@ -130,6 +134,10 @@ function FilterJobs() {
 
 
     return (
+
+        //filter jobs jsx and looping through job Card component
+        //also filter form select options (static) 
+        // added pagination component 
         <>
             <section className="filterFormContainer">
 

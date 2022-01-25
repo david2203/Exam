@@ -4,12 +4,16 @@ import axios from 'axios'
 import server from "../Config_Env/Config"
 import { useNavigate} from "react-router-dom";
 
+// saved jobs visuals
 function SavedJobsProps({id, existing}) {
     const userId = localStorage.getItem("userId")
     const navigate = useNavigate()
+
+    //navigate function 
     function showWholeJobCard() {
         navigate(`/SpecificJob?id=${id}`)
     }
+    //getting data ready for later use
     const useGetSaved = () => {
         const [jobArray, setJobArray] = useState([])
         const [loading, setLoading] = useState(true)
@@ -39,6 +43,7 @@ function SavedJobsProps({id, existing}) {
     const {loading, jobArray} = useGetSaved()
     const removedArray = []
     
+    // functionality for removing a job from saved jobs
     function removeFromSaved(e) {
         e.preventDefault()
         for(let i = 0; i < existing.savedJobs.length; i++) {
@@ -54,6 +59,8 @@ function SavedJobsProps({id, existing}) {
          }).then( window.location.reload())
     }
     if(!loading ) {
+
+        //refining data for visual display
         const brandUpper = jobArray.Brand_Name.charAt(0).toUpperCase() + jobArray.Brand_Name.slice(1)
 
         const jobDescShort = jobArray.Job_Description.substring(0,500)
@@ -63,6 +70,8 @@ function SavedJobsProps({id, existing}) {
         }
         const jobDescSum = jobArray.Job_Description_Summary
         return (
+
+            // saved jobs jsx
             <div>
                 <div className='job-card-container-v1' >
     

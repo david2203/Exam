@@ -3,6 +3,8 @@ import {Link} from "react-router-dom"
 
 function Footer() {
     return (
+
+        // footer content
         <div className='footer-v1'>
             <div className="topPart">
                 <div className="upper">

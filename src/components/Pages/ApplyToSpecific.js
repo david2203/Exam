@@ -5,6 +5,9 @@ import server from "../Config_Env/Config"
 import {useNavigate} from "react-router-dom"
 
 function ApplyToSpecific() {
+
+
+  
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
     const jobId = urlParams.get("jobId")
@@ -12,6 +15,8 @@ function ApplyToSpecific() {
     const navigate = useNavigate()
     const email = localStorage.getItem("userEmail")
     const [error, setError] = useState("")
+
+    // collecting information about chosen Job for application 
     const useGetJob = () => {
         const [jobInfo, setJobInfo] = useState([])
         const [loading, setLoading] = useState(true)
@@ -44,7 +49,7 @@ function ApplyToSpecific() {
     const nowFormat = (now.toISOString().split('T')[0])
 
     
-    
+    //handeling form infomation for later submit
     const initialValues = {
         email: email,
         file: "",
@@ -61,6 +66,7 @@ function ApplyToSpecific() {
         console.log(applyValues)
     }
     
+    // function for submitting the application
     function handleOnSubmit(e) {
         e.preventDefault()
         const data = new FormData();
@@ -113,6 +119,8 @@ function ApplyToSpecific() {
   },[])
         
     return (
+
+      //application jsx
         <div className='applicationContainer bg-shade'>
             <section className="vh-100" >
   <div className="container h-100">

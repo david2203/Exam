@@ -5,6 +5,7 @@ import server from "../Config_Env/Config"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom"
 
+//register page
 
 function Register() {
 
@@ -54,7 +55,7 @@ function Register() {
      }
 
     return (
-
+//register jsx visuals
 <div className='regContainer bg-shade'>
         <section className="vh-100" >
   <div className="container h-100">

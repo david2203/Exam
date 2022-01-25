@@ -3,15 +3,21 @@ import { useNavigate, Link} from "react-router-dom";
 
 
 function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDesc, jobDescSum, jobProfiles, workShift, startDate}) {
+
+    //refining data for Job card
     const brandUpper = brandName.charAt(0).toUpperCase() + brandName.slice(1)
     const jobDescShort = jobDesc.substring(0,500)
     const navigate = useNavigate()
+
+    // function that navigates to a specific job upon clicking it
     function showWholeJobCard() {
         navigate(`/SpecificJob?id=${jobId}`)
     }
 
     
     return (
+
+        // job card jsx
         <div className='job-card-container-v1' >
 
             <div className="jobcard-left col-5">
@@ -27,6 +33,8 @@ function JobCard({brandName, weeklyHrs, jobId, locationCountry, openings, jobDes
 
             
             <p><strong> Job description: </strong> </p>
+
+        
         {jobDescSum ?
          <div dangerouslySetInnerHTML={{__html: jobDescSum + "..." +  "<button class=button-81-orange > Click to read more </button>"}} onClick={showWholeJobCard}/>
          :

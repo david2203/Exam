@@ -1,10 +1,13 @@
 import React, {useEffect} from 'react'
 
 function AboutBrand() {
+
+    //A page about the brands of the diffrent jobs. 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
     const brand = urlParams.get("brand")
 
+    //brand infomation (static)
     let brandSummary = ""
     let slogan =""
     if(brand === "Dentsu") {
@@ -23,7 +26,7 @@ function AboutBrand() {
     else {
         brandSummary = "We are curently working on the information about this brand!"
     }
-
+//function for arriving at the top of the page from link
     function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

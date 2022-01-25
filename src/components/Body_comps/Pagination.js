@@ -1,8 +1,11 @@
 import React from 'react'
 import classnames from 'classnames';
 import { usePagination, DOTS } from './UsePagination';
+
+// custom pagination component. Info is imported from the custom hook component UsePagination.js
 const Pagination = props => {
     const {
+      //props from usePagination
         onPageChange,
         totalCount,
         siblingCount = 1,
@@ -11,7 +14,7 @@ const Pagination = props => {
         className
 
     } = props;
-
+    // setting config variables 
     const paginationRange = usePagination({
         currentPage,
         totalCount,
@@ -19,6 +22,8 @@ const Pagination = props => {
         pageSize
     });
 
+
+    //functionality of clicking paginaton buttons
     if( currentPage === 0 || paginationRange.length < 2) {
         return null;
     }
@@ -33,6 +38,8 @@ const Pagination = props => {
     let lastPage = paginationRange[paginationRange.length - 1];
     let number = 1
     return (
+
+      //pagination jsx
         <ul
           className={classnames('pagination-container', { [className]: className })}
         >

@@ -5,6 +5,8 @@ import server from "../Config_Env/Config"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom"
 
+
+// mostly visuals for the forgotten pw page (functionality doesnt completly work due to errors with email service and strapi v4 )
 function ForgottenPW() {
 
     const initialValues = {
@@ -32,6 +34,7 @@ function ForgottenPW() {
         
     }
     return (
+      //forgotten password page jsx
         <>
             <section className="vh-100" >
   <div className="container h-100">

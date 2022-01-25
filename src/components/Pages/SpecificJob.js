@@ -7,12 +7,17 @@ import arrow from "../Icons/arrow.png";
 import Jobs from './Jobs';
 
 function SpecificJob() {
-
+ //page for showing a specific job
     
     const userId = localStorage.getItem("userId")
+
+    //getting id of specified job from url
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString)
     const jobId = urlParams.get("id")
+
+
+    // getting data ready for later use
     const navigate = useNavigate()
     const useGetJob = () => {
         const [jobInfo, setJobInfo] = useState([])
@@ -46,11 +51,12 @@ function SpecificJob() {
 
     const {loading, jobInfo, existing} = useGetJob()
 
-    
+    //navigation to application to specified job
     function sendToApply() {
         navigate(`/ApplyToSpecific?jobId=${jobId}`)
     }
 
+    //take me to top function
     const [display, setDisplay] = useState("block")
     window.onscroll = function() {takeMeToTop()};
     function takeMeToTop() {
@@ -68,11 +74,8 @@ function SpecificJob() {
       
       const addedToExisting = []
       
+      // function for adding job to saved jobs
       function addToSaved(e) {
-          
-            // for(let i = 0; i < existing.length; i++) {
-            //     addedArray.push(existing[i])
-            // }
 
             existing.push(Number(jobId))
             existing.sort()
@@ -101,6 +104,8 @@ function SpecificJob() {
         topFunction()
     },[])
     return (
+
+        // specific job jsx
         <div className="specificJob-v1">
            <Hero/>
 

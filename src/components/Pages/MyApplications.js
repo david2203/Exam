@@ -4,7 +4,7 @@ import server from "../Config_Env/Config"
 import Application from "../Body_comps/ApplicationCard"
 import Pagination from '../Body_comps/Pagination';
 import arrow from "../Icons/arrow.png";
-
+//page for showing the current logged in users applications
 
 function MyApplications() {
     const userId = localStorage.getItem("userId")
@@ -32,7 +32,7 @@ function MyApplications() {
 
     
 
-   
+    // fucntion for getting the data ready for show
         const useGetApplications = () => {
             const [applicationArray, setApplicationArray] = useState([])
             const [loading, setLoading] = useState(true)
@@ -81,6 +81,7 @@ function MyApplications() {
      
      
     return (
+        //MyApplications jsx / looping through application.js
         <div>
             {event === "success" ? <div className="successApp"> Your application was successfully recieved!<br/> </div> : <></>}
 

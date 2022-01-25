@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from "react-router-dom"
-// import Burger from '@animated-burgers/burger-rotate' 
-// import '@animated-burgers/burger-rotate/dist/styles.css'
+
 function Nav() {
 
     
     const [active, setToActive] = useState("")
     const token = localStorage.getItem("jwt")
+
+    //active links have a bigger font / also burgerstate is added when the media width is to small for regular navbar
     function setActive(e) {
         if(e.target.id === "LinkToLanding") {
             setToActive("activeLanding")
@@ -34,6 +35,8 @@ function Nav() {
         }
     }
     return (
+
+        //nav jsx
         <>
     
         {token ? 

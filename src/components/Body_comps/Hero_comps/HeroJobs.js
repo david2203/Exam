@@ -4,6 +4,8 @@ function HeroJobs() {
     const token = localStorage.getItem("jwt")
     const user = localStorage.getItem("username")
     return (
+
+        // hero visuals for job page
         
              <section className="hero-jobs">
                 <div className="hero-cont">

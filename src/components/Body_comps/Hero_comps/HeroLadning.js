@@ -7,6 +7,8 @@ function HeroLadning() {
     const user = localStorage.getItem("username")
     const firstLogin = localStorage.getItem("firstLogin")
     return (
+
+        //hero visuals for landingpage
         <section className="hero-landing">
             {token ? firstLogin ? <h2 className="hero-h2"> Welcome to Work Made Simple <strong>{user}</strong>! </h2> : <h2 className="hero-h2"> Welcome back <strong>{user}</strong>! </h2>
             : 

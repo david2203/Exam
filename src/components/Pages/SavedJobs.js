@@ -5,15 +5,16 @@ import server from "../Config_Env/Config"
 import SavedJobsProps  from "./SavedJobsProps"
 import {Link} from "react-router-dom"
 
-
+// page for saved jobs
 
 function SavedJobs() {
     
+
     const userId = localStorage.getItem("userId")
    const useGetSaved = () => {
        const [jobArray, setJobArray] = useState([])
        const [loading, setLoading] = useState(true)
-
+    // getting saved jobs from currently logged in user
         const getSavedJobs = async() => {
             try {
                 const jobs = await axios.get(`${server}api/users/${userId}`)
@@ -44,6 +45,7 @@ function SavedJobs() {
 
    
     return (
+        // saved Jobs jsx and looping through SavedJobsprops Visuals
         <div>
             {!loading && jobArray.savedJobs.length !== 0  ? jobArray.savedJobs.map((job,key)=> {
                 

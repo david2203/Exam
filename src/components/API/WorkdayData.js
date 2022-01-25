@@ -3,8 +3,10 @@ import axios from "axios";
 import server from "../Config_Env/Config"
 
 function WorkdayData() {
-
+ // fetching data from a given WORKDAY API (from Isobar) with authentication from ENV. 
     const instance = axios.create({baseURL: server})
+
+    //custom function for having the data ready when it is supposed to be used!
     const useGetWorkdayData = () => {
         const [dataArray, setDataArray] = useState([]) 
         const [loading, setLoading] = useState(true)
@@ -36,7 +38,7 @@ function WorkdayData() {
     }
     const {loading, dataArray} = useGetWorkdayData()
    
-
+    // Setting all variables up for the transfer to the STRAPI Job table
     useEffect(()=> {
         if (!loading) {
             console.log(dataArray)
@@ -95,8 +97,8 @@ function WorkdayData() {
                             EndDate: EndDate,
                             }
                
-                            
-                            
+
+                    // function that is run once in order to add the data to strapi. (Optimized)        
                 const postJobs = async()=>{
                            await instance.post("api/jobs", {
                            data: {

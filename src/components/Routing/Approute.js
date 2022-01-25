@@ -23,6 +23,7 @@ import PrivacyPolicy from "../Pages/PrivacyPolicy";
 import TermsConditions from "../Pages/TermsConditions";
 import WorkWithUs from "../Pages/WorkWithUs";
 
+//Routing component for showing all prefered pages with their specified links
 function Approute() {
     return (
         <>
