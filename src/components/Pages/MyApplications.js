@@ -15,8 +15,8 @@ function MyApplications() {
     const [currentPage, setCurrentPage] = useState(1)
     const [limit, setLimit] = useState(10)
     const [finished, setFinished] = useState(false)
-    var qs = require('qs');
 
+    var qs = require('qs');
     const initialQuery = qs.stringify({
         // filters: {
 
@@ -25,7 +25,7 @@ function MyApplications() {
             page: currentPage,
             pageSize: limit,
         },
-        fields: ["applyEmail"]
+        fields: ["applyEmail", "startDate"]
     }, {
         encodeValuesOnly: true,
     });
@@ -42,7 +42,7 @@ function MyApplications() {
                 const response = await axios.get(`${server}api/applications?${initialQuery}&&populate=*`)
                 setTotalCount(response.data.meta.pagination.total)
                 setApplicationArray(response.data.data)
-                console.log(response)
+     
 
             } catch (err) {
                 console.log(err)
@@ -90,6 +90,7 @@ function MyApplications() {
 
             {
                 myApplications.map((application, key) => {
+                    
                     return (
                         <Application key={application.id} id={application.id} jobId={application.attributes.job.data.id} jobTitle={application.attributes.job.data.attributes.title} jobLocation={application.attributes.job.data.attributes.locationCountry} jobWorkShift={application.attributes.job.data.attributes.Work_Shift} jobBrand={application.attributes.job.data.attributes.Brand_Name} applicationEmail={application.attributes.applyEmail} startDate={application.attributes.startDate} />
                     )

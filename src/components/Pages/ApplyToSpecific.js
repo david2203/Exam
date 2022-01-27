@@ -20,10 +20,13 @@ function ApplyToSpecific() {
   const useGetJob = () => {
     const [jobInfo, setJobInfo] = useState([])
     const [loading, setLoading] = useState(true)
+    const [applicationInfo, setApplicationInfo] = useState([])
 
     const getSpecificJob = async () => {
       try {
         const job = await axios.get(`${server}api/jobs/${jobId}`)
+        const application = await axios.get(`${server}api/applications?&&populate=*`)
+        setApplicationInfo(application.data)
         setJobInfo(job.data)
       } catch (err) {
         console.log(err)
@@ -36,15 +39,13 @@ function ApplyToSpecific() {
     }, [])
 
     return (
-      { jobInfo, loading }
+      { jobInfo, loading, applicationInfo }
     )
 
   }
-  const { loading, jobInfo } = useGetJob()
+  const { loading, jobInfo, applicationInfo } = useGetJob()
 
-  if (!loading) {
-    console.log(jobInfo)
-  }
+  
   const now = new Date()
   const nowFormat = (now.toISOString().split('T')[0])
 
@@ -118,6 +119,58 @@ function ApplyToSpecific() {
     topFunction()
   }, [])
 
+
+  if (!loading) {
+    for(let i = 0; i < applicationInfo.data.length; i++) {
+      
+      if(applicationInfo.data[i].attributes.job.data.id === jobInfo.data.id) {
+        return(
+          <section className="vh-100" >
+          <div className="container h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+              <div className="col-lg-12 col-xl-11">
+                <div className="card text-black" >
+                  <div className="card-body p-md-5">
+                    <div className="row justify-content-center">
+                      <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                        <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Application information </p>
+  
+                       
+  
+  
+  
+                        
+                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <Link to="/Jobs" className="" >Back to jobs</Link>
+                        </div>
+                      </div>
+  
+  
+  
+  
+                      <div className="col-md-10 col-lg-6 col-xl-7 d-flex flex-column justify-content-center order-1 order-lg-2">
+                        <h2>You have already applied to the following Job: </h2> {!loading ? <>
+                          <p> <strong>Title:</strong> {jobInfo.data.attributes.title}</p>
+                          <p> <strong>Location:</strong> {jobInfo.data.attributes.locationCountry}</p>
+                          <p> <strong>Brand:</strong> {jobInfo.data.attributes.Brand_Name}</p>
+                          <p> <strong>Work shift:</strong> {jobInfo.data.attributes.Work_Shift}</p>
+                        </> : <></>}
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" className="img-fluid" alt="Sample image" />
+  
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        )
+      }
+    }
+  }
   return (
 
     //application jsx
